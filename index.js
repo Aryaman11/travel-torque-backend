@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 const home_url = require('./home');
 const detail = require('./detail');
 const checkout = require('./checkout');
@@ -8,6 +7,7 @@ const listing = require('./listing');
 
 const cors = require('cors'); 
 app.use(cors());
+// app.use(express.static(path.join(__dirname, "dist")));
 
 
 
@@ -22,8 +22,6 @@ app.get('/', function(req, res) {
   res.send('Hello from root route.')
 });
 
-app.use('netlify/function/api',express.Router());
-module.exports.handler = serverless(app);
 /* hehe ignore next */
 if (!module.parent) {
   app.listen(3000);
