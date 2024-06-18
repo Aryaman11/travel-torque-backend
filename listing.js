@@ -6,7 +6,7 @@ const client = new MongoClient(uri, {
     strict: true,
     deprecationErrors: true,
   }
-});
+}); 
 
 module.exports = async function(req,res){
     
