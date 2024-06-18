@@ -22,6 +22,8 @@ app.get('/', function(req, res) {
   res.send('Hello from root route.')
 });
 
+app.use('netlify/function/api',express.Router());
+module.exports.handler = serverless(app);
 /* hehe ignore next */
 if (!module.parent) {
   app.listen(3000);
